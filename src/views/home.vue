@@ -96,7 +96,7 @@ button{
   position: fixed;
   font-size: 15px;
   right: 25%;
-  top: 60px;
+  top: 80px;
   width: 100px;
   height: 40px;
   cursor: pointer;

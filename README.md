@@ -6,7 +6,7 @@
 ## 2. 使用
 #### 1. 克隆到本地: git clone  https://github.com/whsasf/visual_project_front.git
 #### 2. 安装依赖: npm install
-#### 3. 启动: npm run dev
+#### 3. 启动: npm run serve
 
 ## 3. 对应后端源代码:
 [后端源代码](https://github.com/whsasf/visual_project_backend)
