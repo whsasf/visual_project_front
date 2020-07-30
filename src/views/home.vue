@@ -4,6 +4,7 @@
     <mapDots :cityData="cityData1" :key="keyValue"></mapDots>
   </div>
   <div>
+    <button class="show" >{{countdown}} s后更新</button>
     <button @click="submit2t2">保存当前</button>
   </div>
 </div>
@@ -19,7 +20,8 @@ export default {
       return {
         cityData1: [],
         keyValue: 0,
-        myinterval: ''
+        myinterval: '',
+        countdown: ''
       }
   },
   components: {
@@ -30,9 +32,15 @@ export default {
   },
   mounted(){
     let self = this
+    self.countdown = 10
     self.myinterval = setInterval(() => {
-      self.getCityArray()
-      }, 10000);
+      self.countdown -= 1
+      if (self.countdown === 0){
+        self.getCityArray()
+      }else if (self.countdown < 0){
+        self.countdown = 10
+      }
+      }, 1000);
   },
   beforeDestroy(){
     console.log('clear interval')
@@ -65,7 +73,7 @@ export default {
     
     getCityArray: function (){
       // console.log('running interval every 10s')
-      console.log('home begin ...')
+      // console.log('home begin ...')
       let self = this
       self.axios({
               method: 'get',
@@ -74,6 +82,7 @@ export default {
           .then(res => {
             self.cityData1 = res.data.random_city_data
             self.keyValue += 1
+            self.countdown = 10 // reset countdown = 10
             // console.log(self.cityData)
           })
           .then( ()=>{
@@ -100,6 +109,15 @@ button{
   width: 100px;
   height: 40px;
   cursor: pointer;
+}
+
+button.show{
+  position: fixed;
+  font-size: 15px;
+  left: 25%;
+  top: 80px;
+  width: 100px;
+  height: 40px;
 }
 
 </style>

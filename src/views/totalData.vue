@@ -47,7 +47,7 @@ export default {
           })
     },
     getCityArrayTotal: function (){
-      console.log('total begin ...')
+      // console.log('total begin ...')
       // console.log('running interval every 10s')
       let self = this
       self.axios({
