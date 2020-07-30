@@ -9,4 +9,4 @@
 #### 3. 启动: npm run dev
 
 ## 3. 对应后端源代码:
-[后端源代码](https://github.com/whsasf/visual_project_backend.git)
+[后端源代码](https://github.com/whsasf/visual_project_backend)
